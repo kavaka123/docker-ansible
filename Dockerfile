@@ -18,6 +18,9 @@ Run apt-get update -qy &&\
 VOLUME /ansible
 WORKDIR /ansible
 
+#Copy probe play-book to ansible image
+COPY ansible /ansible
+
 ENTRYPOINT ["ansible-playbook"]
 CMD ["site.yml"]    
     
